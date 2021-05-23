@@ -28,14 +28,14 @@ function App() {
       const response = await fetch(url)
       const data = await response.json()
       console.log(data);
-      setPhotos((oldPhots) => {
+      setPhotos((oldPhotos) => {
         if (query && page === 1) {
           return [...data.results]
         }
         else if (query) {
-          return [...oldPhots, ...data.results]
+          return [...oldPhotos, ...data.results]
         } else {
-          return [...oldPhots, ...data]
+          return [...oldPhotos, ...data]
         }
       })
       setLoading(false)
